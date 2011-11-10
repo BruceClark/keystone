@@ -1,0 +1,8 @@
+~/lib/assets/javascripts/keystone/extensions.js
+~/lib/assets/javascripts/keystone/forms.js
+~/lib/assets/javascripts/keystone/utilities.js
+
+~/app/assets/javascripts/client/interface.js
+~/app/assets/javascripts/client/main.js
+
+~/app/assets/javascripts/client.js
