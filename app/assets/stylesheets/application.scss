@@ -53,6 +53,9 @@ $purple          : #7a43b6;
 
 // Import Partials
 
-@import "../lib/assets/stylesheets/keystone";
-@import "../app/assets/stylesheets/application";
-@import "../vendor/assets/stylesheets/vendor";
+@import "../../../lib/assets/stylesheets/keystone";
+@import "application/screen";
+@import "application/mobile";
+@import "application/ie";
+@import "application/print";
+@import "../../../vendor/assets/stylesheets/vendor";
