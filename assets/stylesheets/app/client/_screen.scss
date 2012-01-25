@@ -304,6 +304,29 @@ fieldset {
       line-height: normal;
     }
   }
+  
+  &.stacked {
+    p {
+      margin: 0 0 15px 0;
+
+      label {
+        display: block;
+        padding: 0 0 5px 0;
+
+        sup { // Used to indicate a required field
+          color: #f00;
+        }
+      }
+
+      em.info {
+        padding-left: 10px;
+      }
+    }
+
+    span.error {
+      color: #f00;
+    }
+  }
 }
 
 
