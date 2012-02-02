@@ -1,3 +1,11 @@
+/* ----------------------------------------------------------------------------
+
+  Site Name
+  Coded by "Bad Ass CSS Author" of Imulus
+
+---------------------------------------------------------------------------- */
+
+
 /* =Initial Page Structure
 ---------------------------------------------------------------------------- */
 
@@ -5,7 +13,10 @@
 @include imulus-reset;
 
 html { @include html; }
-body { @include body; }
+body { 
+  @include body;
+  line-height: 1.5;
+}
 
 .container {
   @include container(960px);
@@ -26,7 +37,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   margin-bottom: $baseline;
   font-size: 30px;
-  line-height: $baseline * 2;
   small {
     font-size: 18px;
   }
@@ -34,15 +44,12 @@ h1 {
 
 h2 {
   font-size: 24px;
-  line-height: $baseline * 2;
   small {
     font-size: 14px;
   }
 }
 
-h3, h4, h5, h6 {
-  line-height: $baseline * 2;
-}
+h3, h4, h5, h6 { }
 
 h3 {
   font-size: 18px;
@@ -97,7 +104,6 @@ blockquote {
 
 address {
   display: block;
-  line-height: $baseline;
   margin-bottom: $baseline;
 }
 
@@ -137,22 +143,26 @@ a {
 /* =Lists
 ---------------------------------------------------------------------------- */
 
-ul,
-ol { margin: 0 0 $baseline 25px; }
+#main ul,
+#main ol { margin: 0 0 $baseline 0; 
+  li {
+    padding-left: 25px;
+  }
+}
 
-ul ul,
-ul ol,
-ol ul,
-ol ol { margin-bottom: 0; }
-ul    { list-style: disc; }
-ul ul { list-style: circle; }
-ol    { list-style: decimal; }
-ol ol { list-style: lower-alpha; }
-li    { line-height: $baseline; }
+#main ul ul,
+#main ul ol,
+#main ol ul,
+#main ol ol { margin-bottom: 0; }
+
+#main ul    { list-style: disc; }
+#main ul ul { list-style: circle; }
+#main ol    { list-style: decimal; }
+#main ol ol { list-style: lower-alpha; }
 
 dl {
   margin-bottom: $baseline;
-  dt, dd { line-height: $baseline; }
+  dt, dd { }
   dt     { font-weight: bold; }
   dd     { margin-left: $baseline / 2; }
 }
@@ -221,6 +231,11 @@ fieldset {
     border-color: #666;
   }
 
+  select { // Dropdown width and padding is inconsistent with regular inputs
+    width: 300px;
+    padding: 2px;
+  }
+
   textarea {
     height: 175px;
   }
@@ -233,21 +248,13 @@ fieldset {
     }
   }
 
-  select { // Dropdown width and padding is inconsistent with regular inputs
-    width: 300px;
-    padding: 2px;
-  }
-
   input.submit { // Text based input button
     padding: 5px 10px;
     border: 1px solid #a2adb4;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    @include border-radius(5px)
     background: #d9e3e9;
     color: #3e6d95;
   }
-
 
   input.submit-button,
   input[type="image"] { // Image based input button
@@ -345,13 +352,15 @@ fieldset {
   position: relative;
   @include autoclear;
 
-  strong.logo {
+  strong#logo {
     position: relative;
     float: left;
+    @include image-replacement('/images/logo.gif', 163px, 99px);
 
     a {
       display: block;
-      @include image-replacement('/images/logo.gif', 163px, 99px);
+      width: 100%;
+      height: 100%;
     }
   }
 }
@@ -397,7 +406,7 @@ fieldset {
       a {
         display: block;
         padding: 5px 10px;
-        background: #ddd;
+        background: $gray-light;
         text-decoration: none;
       }
     }
